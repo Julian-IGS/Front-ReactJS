@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -9,20 +10,22 @@ function Pokedex() {
       .then(data => setPokemons(data))
      
   }, []);
-
 // Creer une méthode pour afficher le pokemon selectionner
 // depuis onclick
+
   return (
 
     <div>
     {pokemons.map(pokemon => (
-      <div key={pokemon.pokedexId} onClick={'TODO'}>
-            <div >{pokemon.name}</div>
+      <div key={pokemon.pokedexId} >
+            <Link to={`/${pokemon_id}`}>{pokemon.name}</Link>
             <div >{pokemon.height}</div>
       </div>
     ))}
     </div>
   )
 }
+
+ 
 
 export default Pokedex;
