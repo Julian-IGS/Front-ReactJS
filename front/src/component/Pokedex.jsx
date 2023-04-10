@@ -18,14 +18,13 @@ function Pokedex() {
     <div>
     {pokemons.map(pokemon => (
       <div key={pokemon.pokedexId} >
-            <Link to={`/${pokemon_id}`}>{pokemon.name}</Link>
+            <Link to={`/${pokemon.pokedexId}`}>{pokemon.name}</Link>
             <div >{pokemon.height}</div>
       </div>
     ))}
     </div>
   )
+
+  
 }
-
- 
-
 export default Pokedex;

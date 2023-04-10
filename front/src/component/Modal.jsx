@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
-export default function Pokedex() {
+export default function Modal() {
+  const { id } = useParams();
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/pokemon')
+    fetch(`http://localhost:5000/api/pokemon/${id}`)
       .then(response => response.json())
-      .then(data => setPokemon(data))
-     
-  }, []);
-// Creer une méthode pour afficher le pokemon selectionner
-// depuis onclick
+      .then(data => setPokemon(data));
+  }, [id]);
 
-// recuperer dynamiquement l'id depuis URL que je vais passer dans fetch /uID
   return (
     <div>
+      <h1>{pokemon.name}</h1>
+      <div>{pokemon.height}</div>
+      {/* ... */}
     </div>
-  )
+  );
 }
