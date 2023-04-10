@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Pokedex />} />
-        <Route path="/:id" element={<Modal />} />
+        <Route path="/:pokedexId" element={<Modal />} />
       </Routes>
     </BrowserRouter>
   );
