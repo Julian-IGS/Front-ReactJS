@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export default function Modal() {
   const { pokedexId } = useParams();
@@ -13,10 +13,9 @@ export default function Modal() {
 
   return (
     <div>
-      <h1>{pokemon.name}</h1>
+      <img src={pokemon.picture} alt={pokemon.name} />
       <div>Height: {pokemon.height}cm</div>
       <div>Weight: {pokemon.weight}kg</div>
-      <img src={pokemon.picture} alt={pokemon.name} />
       {/* <div>Stats:</div>
       <ul>
       <li>HP: {pokemon.stats.hp}</li>
@@ -26,6 +25,8 @@ export default function Modal() {
         <li>Special Defense: {pokemon.stats.special_defense}</li>
         <li>Speed: {pokemon.stats.speed}</li>
       </ul> */}
+      <Link to="/">Retour au Pokedex !</Link>
     </div>
+
   );
 }
