@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Modal() {
   const { pokedexId } = useParams();
@@ -12,21 +13,20 @@ export default function Modal() {
   }, [pokedexId]);
 
   return (
-    <div>
-      <img src={pokemon.picture} alt={pokemon.name} />
-      <div>Height: {pokemon.height}cm</div>
-      <div>Weight: {pokemon.weight}kg</div>
-      {/* <div>Stats:</div>
-      <ul>
-      <li>HP: {pokemon.stats.hp}</li>
-        <li>Attack: {pokemon.stats.attack}</li>
-        <li>Defense: {pokemon.stats.defense}</li>
-        <li>Special Attack: {pokemon.stats.special_attack}</li>
-        <li>Special Defense: {pokemon.stats.special_defense}</li>
-        <li>Speed: {pokemon.stats.speed}</li>
-      </ul> */}
-      <Link to="/">Retour au Pokedex !</Link>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card shadow-sm">
+            <img src={pokemon.picture} alt={pokemon.name} className="card-img-top" />
+            <div className="card-body">
+              <h5 className="card-title">{pokemon.name}</h5>
+              <p className="card-text">Height: {pokemon.height}cm</p>
+              <p className="card-text">Weight: {pokemon.weight}kg</p>
+              <Link to="/" className="btn btn-primary">Retour au Pokedex !</Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   );
 }
