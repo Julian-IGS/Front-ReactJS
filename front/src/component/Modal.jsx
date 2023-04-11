@@ -13,6 +13,7 @@ export default function Modal() {
   }, [pokedexId]);
 
   return (
+      pokemon.stats &&
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -22,6 +23,7 @@ export default function Modal() {
               <h5 className="card-title">{pokemon.name}</h5>
               <p className="card-text">Height: {pokemon.height}cm</p>
               <p className="card-text">Weight: {pokemon.weight}kg</p>
+              <p className="card-text">Life: {pokemon.stats.hp}Hp</p>
               <Link to="/" className="btn btn-primary">Retour au Pokedex !</Link>
             </div>
           </div>
