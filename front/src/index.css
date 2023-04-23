@@ -1,13 +1,13 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #007bff; /* Couleur de fond bleu */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+  margin-top: 20px; /* Marge en haut de la carte */
+  margin-bottom: 20px; /* Marge en bas de la carte */
+  height: calc(100vh - 40px); /* Hauteur de la carte pour centrer verticalement */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -13,22 +13,35 @@ export default function Modal() {
   }, [pokedexId]);
 
   return (
-      pokemon.stats &&
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card shadow-sm">
-            <img src={pokemon.picture} alt={pokemon.name} className="card-img-top" />
-            <div className="card-body">
-              <h5 className="card-title">{pokemon.name}</h5>
-              <p className="card-text">Height: {pokemon.height}cm</p>
-              <p className="card-text">Weight: {pokemon.weight}kg</p>
-              <p className="card-text">Life: {pokemon.stats.hp}Hp</p>
-              <Link to="/" className="btn btn-primary">Retour au Pokedex !</Link>
+    pokemon.stats && (
+      <div className="container-fluid bg-primary" style={{ minHeight: "100vh" }}>
+        <div className="row justify-content-center align-items-center" style={{ height: "100%" }}>
+          <div className="col-md-6">
+            <div className="card shadow-lg bg-light" style={{ border: "4px solid #FFE031" }}>
+              <img src={pokemon.picture} alt={pokemon.name} className="card-img-top mx-auto" style={{ maxHeight: "200px", maxWidth: "200px" }} />
+
+              <div className="card-body">
+                <h5 className="card-title text-center text-primary">{pokemon.name}</h5>
+                <p className="card-text text-center">
+                  <span className="text-muted">Height: </span>{pokemon.height}cm<br />
+                  <span className="text-muted">Weight: </span>{pokemon.weight}kg<br />
+                  <span className="text-muted">Life: </span>{pokemon.stats.hp}Hp<br />
+                  <span className="text-muted">Attack: </span>{pokemon.stats.attack}<br />
+                  <span className="text-muted">Defense: </span>{pokemon.stats.defense}<br />
+                  <span className="text-muted">Special Attack: </span>{pokemon.stats.special_attack}<br />
+                  <span className="text-muted">Special Defense: </span>{pokemon.stats.special_defense}<br />
+                  <span className="text-muted">Speed: </span>{pokemon.stats.speed}<br />
+                  <span className="text-muted">Type: </span>{pokemon.elements.name}<br />
+                  <span className="text-muted"></span>{pokemon.learningSkills.description}
+                </p>
+                <div className="text-center">
+                  <Link to="/" className="btn btn-outline-primary">Retour au Pokedex !</Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
