@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importation du CSS de Bootstrap
 import PokedexImg from '../img/pokedex.png';
 
 function Pokedex() {
-  const [pokemons, setPokemons] = useState([]);
-
+  const [pokemons, setPokemons] = useState([]); // On utilise le hook useState pour initialiser l'état du pokemon à une valeur vide
   useEffect(() => {
-    fetch('http://localhost:5000/api/pokemon')
+    fetch('http://localhost:5000/api/pokemon') // Requête pour récupérer la liste des pokemons depuis l'API
       .then(response => response.json())
-      .then(data => setPokemons(data));
+      .then(data => setPokemons(data)); // Mise à jour du state avec la liste des pokemons
   }, []);
 
   return (

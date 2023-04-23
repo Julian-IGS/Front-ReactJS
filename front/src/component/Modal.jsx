@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import du CSS de Bootstrap
 
 export default function Modal() {
-  const { pokedexId } = useParams();
-  const [pokemon, setPokemon] = useState({});
+  const { pokedexId } = useParams(); // On récupère l'id du pokemon depuis les paramètres de l'URL grâce à useParams
+  const [pokemon, setPokemon] = useState({}); // On utilise le hook useState pour initialiser l'état du pokemon à une valeur vide
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/pokemon/${pokedexId}`)
+  useEffect(() => { // On utilise le hook useEffect pour faire une requête à l'API
+    fetch(`http://localhost:5000/api/pokemon/${pokedexId}`) 
       .then(response => response.json())
-      .then(data => setPokemon(data));
+      .then(data => setPokemon(data)); // Mise à jour du state avec la liste des pokemons
   }, [pokedexId]);
 
   return (
-    pokemon.stats && (
+    pokemon.stats && ( // Si les statistiques du pokemon sont définies (pour éviter les erreurs de rendu)
       <div className="container-fluid bg-primary" style={{ minHeight: "100vh" }}>
         <div className="row justify-content-center align-items-center" style={{ height: "100%" }}>
           <div className="col-md-6">
