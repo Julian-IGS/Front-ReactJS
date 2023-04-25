@@ -149,6 +149,7 @@ function AddPokemon() {
            </div>
         <button type="submit" class="btn btn-default">Sauvegarder</button>
      </form>   
+     
     );
   }
   
