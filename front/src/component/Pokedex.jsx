@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importation du CSS de Bootstrap
 import PokedexImg from '../img/pokedex.png';
+import "../CSS/pokedex.scss";
+
 
 function Pokedex() {
   const [pokemons, setPokemons] = useState([]); // On utilise le hook useState pour initialiser l'état du pokemon à une valeur vide
@@ -12,7 +14,9 @@ function Pokedex() {
   }, []);
 
   return (
+    
     <div className="container-fluid bg-primary" style={{ minHeight: "100vh", marginTop: 0 }}>
+      
       <img src={PokedexImg} alt="Pokedex Image" className="mx-auto d-block" style={{ maxHeight: "200px", maxWidth: "200px" }}/>
       <div className="row">
         {pokemons.map(pokemon => (
@@ -35,10 +39,22 @@ function Pokedex() {
       <div className="container-fluid">
     <div className="row justify-content-end">
       <div className="col-md-3 mb-3">
-        <Link to="/add" className="btn btn-primary">Ajouter un Pokémon</Link>
+        
+      </div>
+    </div>
+
+  </div>
+  <div className="container-fluid">
+  <div className="row justify-content-end">
+    <div className="col-md-3 mb-3 mx-auto">
+      <div className="text-center">
+        <Link to="/add" className="btn btn-light btn-lg mb-3 btn-outline-dark">Ajouter un Pokémon</Link>
       </div>
     </div>
   </div>
+</div>
+
+
     </div>
   );
 }

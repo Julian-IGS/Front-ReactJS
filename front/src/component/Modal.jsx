@@ -35,7 +35,7 @@ export default function Modal() {
                   <span className="text-muted"></span>{pokemon.learningSkills.description}
                 </p>
                 <div className="text-center">
-                  <Link to="/" className="btn btn-outline-primary">Retour au Pokedex !</Link>
+                  <Link to="/" className="btn btn-outline-primary">Retour au Pokedex.</Link>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
+import "../CSS/add.scss";
 
 function AddPokemon() {
     const [name, setName] = useState(''); // On utilise le hook useState pour initialiser l'état du nom du pokemon à une valeur vide
@@ -11,6 +12,7 @@ function AddPokemon() {
     const [special_attack, setSpecial_attack] = useState(0);
     const [special_defense, setSpecial_defense] = useState(0);
     const [speed, setSpeed] = useState(0);
+
 
     const getPokemonId = async() => {
         const pokemons = await fetch('http://localhost:5000/api/pokemon') // Requête pour récupérer la liste des pokemons depuis l'API
@@ -54,51 +56,99 @@ function AddPokemon() {
     };
   
     return (
-        <div className="container-fluid bg-primary" style={{ minHeight: "100vh", marginTop: 0 }}>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Nom</label>
-            <input type="text" className="form-control" id="name" value={name} onChange={e => setName(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="height">Hauteur</label>
-            <input type="number" className="form-control" id="height" value={height} onChange={e => setHeight(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="weight">Poids</label>
-            <input type="number" className="form-control" id="weight" value={weight} onChange={e => setWeight(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">hp</label>
-            <input type="text" className="form-control" id="hp" value={hp} onChange={e => setHp(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">attack</label>
-            <input type="text" className="form-control" id="attack" value={attack} onChange={e => setAttack(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">defense</label>
-            <input type="text" className="form-control" id="defense" value={defense} onChange={e => setDefense(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">special_attack</label>
-            <input type="text" className="form-control" id="special_attack" value={special_attack} onChange={e => setSpecial_attack(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">special_defense</label>
-            <input type="text" className="form-control" id="special_defense" value={special_defense} onChange={e => setSpecial_defense(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">speed</label>
-            <input type="text" className="form-control" id="speed" value={speed} onChange={e => setSpeed(e.target.value)} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="picture">Picture</label>
-            <input type="text" className="form-control" id="picture" value={picture} onChange={e => setPicture(e.target.value)} required />
-          </div>
-          <button type="submit" className="btn">Ajouter</button>
-        </form>
-      </div>    
+        <form id="form" onSubmit={handleSubmit}>
+        <p>Ajouter votre pokemon.</p>
+     
+        <div class="form-group">
+           <label htmlFor="name">Nom</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} required />
+              </div>
+           </div>
+           
+        <div class="form-group">
+           <label htmlFor="height">Hauteur</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="height" value={height} onChange={e => setHeight(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="weight">Poids</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="weight" value={weight} onChange={e => setWeight(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="HP">Vie</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="hp" value={hp} onChange={e => setHp(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="attack">Attaque</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="attack" value={attack} onChange={e => setAttack(e.target.value)} required />
+              </div>
+           </div>
+
+           <div class="form-group">
+           <label htmlFor="defense">Defense</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="defense" value={defense} onChange={e => setDefense(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="special_attack">Attaque spéciale</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="special_attack" value={special_attack} onChange={e => setSpecial_attack(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="special_defense">Defense spéciale</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="special_defense" value={special_defense} onChange={e => setSpecial_defense(e.target.value)} required />
+              </div>
+           </div>
+           
+           <div class="form-group">
+           <label htmlFor="speed">Vitesse</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="speed" value={speed} onChange={e => setSpeed(e.target.value)} required />
+              </div>
+           </div>
+           <div class="form-group">
+           <label htmlFor="picture">Photo</label>
+                 <br />
+                 <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+              <input type="text" id="picture" value={picture} onChange={e => setPicture(e.target.value)} required />
+              </div>
+           </div>
+        <button type="submit" class="btn btn-default">Sauvegarder</button>
+     </form>   
     );
   }
   
