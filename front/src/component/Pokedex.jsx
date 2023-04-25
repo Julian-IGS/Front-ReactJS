@@ -32,6 +32,13 @@ function Pokedex() {
           </div>
         ))}
       </div>
+      <div className="container-fluid">
+    <div className="row justify-content-end">
+      <div className="col-md-3 mb-3">
+        <Link to="/add" className="btn btn-primary">Ajouter un Pokémon</Link>
+      </div>
+    </div>
+  </div>
     </div>
   );
 }
